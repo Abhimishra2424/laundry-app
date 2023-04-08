@@ -13,6 +13,7 @@ import * as Location from "expo-location";
 import { Entypo } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import Carousel from "../components/Carousel";
+import Services from "../components/Services";
 
 const HomeScreen = () => {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
@@ -81,7 +82,7 @@ const HomeScreen = () => {
     }
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ marginTop: 40 }}>
       {/* location and Profile */}
       <View style={{ flexDirection: "row", alignItems: "center", padding: 10 }}>
         <Entypo
@@ -124,6 +125,8 @@ const HomeScreen = () => {
 
       {/* Image Carousel*/}
       <Carousel />
+      {/* services  */}
+      <Services />
     </SafeAreaView>
   );
 };
