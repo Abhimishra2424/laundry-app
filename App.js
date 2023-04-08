@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet,  SafeAreaView } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
+
 
 export default function App() {
   return (
@@ -10,5 +11,5 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  
+
 });
