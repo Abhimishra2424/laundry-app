@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import { Entypo } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import Carousel from "../components/Carousel";
 
 const HomeScreen = () => {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
@@ -113,13 +114,16 @@ const HomeScreen = () => {
           margin: 10,
           justifyContent: "space-between",
           borderWidth: 0.8,
-          borderColor: "black",
+          borderColor: "grey",
           borderRadius: 7,
         }}
       >
         <TextInput placeholder="Search for Items or More" />
         <AntDesign name="search1" size={24} color="black" />
       </View>
+
+      {/* Image Carousel*/}
+      <Carousel />
     </SafeAreaView>
   );
 };
