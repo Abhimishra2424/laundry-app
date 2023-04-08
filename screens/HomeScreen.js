@@ -1,6 +1,15 @@
-import { Alert, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Alert,
+  Image,
+  Pressable,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import * as Location from "expo-location";
+import { Entypo } from "@expo/vector-icons";
 
 const HomeScreen = () => {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
@@ -70,9 +79,28 @@ const HomeScreen = () => {
   };
   return (
     <SafeAreaView>
-      <View>
-        <Text>{displayCurrentAddress}</Text>
+      <View style={{ flexDirection: "row", alignItems: "center", padding: 10 }}>
+        <Entypo
+          name="location"
+          size={30}
+          color="#FF0000"
+          style={{ marginRight: 5 }}
+        />
+        <View>
+          <Text style={{ fontSize: 18, fontWeight: 600 }}>Home</Text>
+          <Text>{displayCurrentAddress}</Text>
+        </View>
+
+        <Pressable style={{ marginLeft: "auto", marginRight: 7 }}>
+          <Image
+            style={{ width: 40, height: 40, borderRadius: 20 }}
+            source={{
+              uri: "https://lh3.googleusercontent.com/-rw9XpQCMLoQ/AAAAAAAAAAI/AAAAAAAAAAA/AN6ncHiNOWYCI8vGCrf_fmBNPQ34_Xns8Q/photo.jpg?sz=46",
+            }}
+          />
+        </Pressable>
       </View>
+      {/* search Bar */}
     </SafeAreaView>
   );
 };
