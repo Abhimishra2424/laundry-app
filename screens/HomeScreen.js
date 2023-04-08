@@ -5,11 +5,13 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
+  TextInput,
   View,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import { Entypo } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 const HomeScreen = () => {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
@@ -79,6 +81,7 @@ const HomeScreen = () => {
   };
   return (
     <SafeAreaView>
+      {/* location and Profile */}
       <View style={{ flexDirection: "row", alignItems: "center", padding: 10 }}>
         <Entypo
           name="location"
@@ -101,6 +104,22 @@ const HomeScreen = () => {
         </Pressable>
       </View>
       {/* search Bar */}
+
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          padding: 10,
+          margin: 10,
+          justifyContent: "space-between",
+          borderWidth: 0.8,
+          borderColor: "black",
+          borderRadius: 7,
+        }}
+      >
+        <TextInput placeholder="Search for Items or More" />
+        <AntDesign name="search1" size={24} color="black" />
+      </View>
     </SafeAreaView>
   );
 };
