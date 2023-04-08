@@ -22,7 +22,7 @@ const images = [
 //   },
 
 // services data code
-const services = [
+export const services = [ 
     {
         id: "0",
         image: "https://cdn-icons-png.flaticon.com/128/3003/3003984.png",
@@ -46,7 +46,7 @@ const services = [
 ];
 
 // products data 
-const servicess = [
+export const products = [
     {
         id: "0",
         image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
