@@ -3,6 +3,7 @@
 
 >> expo-location allows reading geolocation information from the device. Your app can poll for the current location or subscribe to location update events.
 
+>> 1 : Home screen 
 ## npx expo install expo-location
 >> SliderBox
 ## npm i react-native-image-slider-box
@@ -16,3 +17,8 @@
 >> Installing dependencies into an Expo managed project
 ## npx expo install react-native-screens react-native-safe-area-context
 ## npm install @react-navigation/native-stack
+
+>> 2 : PickUp screen 
+>> IN pickup screen we need react-native-horizontal-datepicker
+## npm i @awrminkhodaei/react-native-horizontal-datepicker
+## npm i moment-jalaali
