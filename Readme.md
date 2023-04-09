@@ -6,3 +6,7 @@
 ## npx expo install expo-location
 >> SliderBox
 ## npm i react-native-image-slider-box
+
+>> state management with Redux toolkit
+## npm install @reduxjs/toolkit
+## npm install react-redux

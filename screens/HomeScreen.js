@@ -2,12 +2,11 @@ import {
   Alert,
   Image,
   Pressable,
-  SafeAreaView,
   StyleSheet,
   Text,
   TextInput,
   View,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import * as Location from "expo-location";
@@ -17,12 +16,17 @@ import Carousel from "../components/Carousel";
 import Services from "../components/Services";
 import { products } from "../data/data";
 import Dressitem from "../components/Dressitem";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../ProductReducer";
 
 const HomeScreen = () => {
-  const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
-    "we are loading your location"
-  );
+  const cart = useSelector((state) => state.cart.cart);
+  const productsState = useSelector((state) => state.product.product);
+  const dispatch = useDispatch();
+
+  const [displayCurrentAddress, setdisplayCurrentAddress] = useState("we are loading your location");
   const [locationServicesEnabled, setlocationServicesEnabled] = useState(false);
+
   useEffect(() => {
     checkIfLocationEnabled();
     getCurrentLocation();
@@ -84,6 +88,16 @@ const HomeScreen = () => {
       }
     }
   };
+
+
+  useEffect(() => {
+    if (productsState.length > 0) return
+    const fetchProducts = () => {
+      products?.map((item) => dispatch(getProducts(item)));
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <ScrollView style={{ marginTop: 40, backgroundColor: "#f0f0f0" }}>
       {/* location and Profile */}
@@ -128,12 +142,12 @@ const HomeScreen = () => {
 
       {/* Image Carousel*/}
       <Carousel />
-      
+
       {/* services  */}
       <Services />
 
       {/* Render all the Products */}
-      {products.map((item, index) => (
+      {productsState.map((item, index) => (
         <Dressitem item={item} key={index} />
       ))}
     </ScrollView>

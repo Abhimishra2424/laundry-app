@@ -1,12 +1,15 @@
-import { StyleSheet,  SafeAreaView } from "react-native";
+import { StyleSheet } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
-
+import { Provider } from "react-redux";
+import { StatusBar } from "expo-status-bar";
+import store from './store'
 
 export default function App() {
   return (
-    <SafeAreaView>
+    <Provider store={store} >
       <HomeScreen />
-    </SafeAreaView>
+      <StatusBar style="auto" />
+    </Provider>
   );
 }
 
