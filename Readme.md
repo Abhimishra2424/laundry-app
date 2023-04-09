@@ -10,3 +10,9 @@
 >> state management with Redux toolkit
 ## npm install @reduxjs/toolkit
 ## npm install react-redux
+
+>> Routing and navigation for Expo and React Native apps.
+## npm install @react-navigation/native
+>> Installing dependencies into an Expo managed project
+## npx expo install react-native-screens react-native-safe-area-context
+## npm install @react-navigation/native-stack
