@@ -16,7 +16,8 @@ const LoginScreen = () => {
   const [loading, setLoading] = useState(false);
 
   const login = () => {
-
+    console.log("email", email)
+    console.log("password", password)
   }
 
   return (
