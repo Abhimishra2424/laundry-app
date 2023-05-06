@@ -13,6 +13,9 @@ import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 const RegisterScreen = () => {
   const [email, setEmail] = useState("");
@@ -20,8 +23,35 @@ const RegisterScreen = () => {
   const [phone, setPhone] = useState("");
   const navigation = useNavigation();
 
-  const register = () => {};
-
+  const register = () => {
+    if (email === "" || password === "" || phone === "") {
+      Alert.alert(
+        "Invalid Details",
+        "Please fill all the details",
+        [
+          {
+            text: "Cancel",
+            onPress: () => console.log("Cancel Pressed"),
+            style: "cancel",
+          },
+          { text: "OK", onPress: () => console.log("OK Pressed") },
+        ],
+        { cancelable: false }
+      );
+    }
+  
+    createUserWithEmailAndPassword(auth, email, password).then(
+      (userCredential) => {;
+        const user = userCredential._tokenResponse.email;
+        const myUserUid = auth.currentUser.uid;
+        // Set user in database
+        setDoc(doc(db, "users", `${myUserUid}`), {
+          email: user,
+          phone: phone,
+        });
+      }
+    );
+  };
   return (
     <SafeAreaView
       style={{
