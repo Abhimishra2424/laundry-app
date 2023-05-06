@@ -7,6 +7,7 @@ import PickUpScreen from './screens/PickUpScreen';
 import CartScreen from './screens/CartScreen';
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
+import ProfileScreen from './screens/ProfileScreen';
 
 const StackNavigator = () => {
     const Stack = createNativeStackNavigator();
@@ -18,6 +19,7 @@ const StackNavigator = () => {
                 <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="PickUp" component={PickUpScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="Cart" component={CartScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     )

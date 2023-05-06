@@ -19,6 +19,7 @@ import Dressitem from "../components/Dressitem";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../ProductReducer";
 import { useNavigation } from "@react-navigation/native";
+import ProfileScreen from "./ProfileScreen";
 
 const HomeScreen = () => {
   const cart = useSelector((state) => state.cart.cart);
@@ -117,7 +118,7 @@ const HomeScreen = () => {
             <Text>{displayCurrentAddress}</Text>
           </View>
 
-          <Pressable style={{ marginLeft: "auto", marginRight: 7 }}>
+          <Pressable onPress={()=> navigation.navigate("Profile")} style={{ marginLeft: "auto", marginRight: 7 }}>
             <Image
               style={{ width: 40, height: 40, borderRadius: 20 }}
               source={{
